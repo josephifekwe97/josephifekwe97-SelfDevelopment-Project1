@@ -18,7 +18,7 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        cd node
+        cd Node
         docker build -t yourdockerhubusername/node-app:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         docker push yourdockerhubusername/node-app:latest
@@ -27,14 +27,14 @@ jobs:
         docker build -t yourdockerhubusername/java-app:latest .
         docker push yourdockerhubusername/java-app:latest
 
-        cd ../django
+        cd ../Django/mydjangoapp
         docker build -t yourdockerhubusername/django-app:latest .
         docker push yourdockerhubusername/django-app:latest
 
-        cd ../flask
+        cd ../Flask/myflaskapp
         docker build -t yourdockerhubusername/flask-app:latest .
         docker push yourdockerhubusername/flask-app:latest
 
-        cd ../react
+        cd ../react/myreactapp
         docker build -t yourdockerhubusername/react-app:latest .
         docker push yourdockerhubusername/react-app:latest
