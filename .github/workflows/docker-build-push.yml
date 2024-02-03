@@ -38,3 +38,12 @@ jobs:
         cd ../react/myreactapp
         docker build -t yourdockerhubusername/react-app:latest .
         docker push yourdockerhubusername/react-app:latest
+    - name: Debug Information
+      run: |
+        echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+        echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
+        echo "docker build -t yourdockerhubusername/node-app:latest ."
+        echo "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+        echo "docker push yourdockerhubusername/node-app:latest"
+        
+        # Add more debugging information as needed
