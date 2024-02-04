@@ -33,6 +33,7 @@ jobs:
         cd Django/mydjangoapp
         docker build -t josephifekwe97/django-app:latest .
         docker push josephifekwe97/django-app:latest
+        pwd
         cd ..
         cd Flask/myflaskapp
         docker build -t josephifekwe97/flask-app:latest .
