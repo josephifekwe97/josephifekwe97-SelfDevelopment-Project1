@@ -24,7 +24,7 @@ jobs:
         docker build -t josephifekwe97/node1.4:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         docker push   josephifekwe97/node1.4:latest
-        
+        pwd
         cd ../java
         docker build -t josephifekwe97/java-app:latest .
         docker push josephifekwe97/java-app:latest
