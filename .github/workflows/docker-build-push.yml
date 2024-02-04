@@ -35,6 +35,7 @@ jobs:
         docker push josephifekwe97/django-app:latest
         pwd
         cd ..
+        pwd
         cd Flask/myflaskapp
         docker build -t josephifekwe97/flask-app:latest .
         docker push josephifekwe97/flask-app:latest
