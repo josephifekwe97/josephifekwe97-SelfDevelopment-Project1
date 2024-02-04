@@ -20,9 +20,9 @@ jobs:
         
       run: |
         cd Node
-        docker build -t DOCKER_USERNAME/node1.4:latest .
+        docker build -t josephifekwe97/node1.4:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        docker push DOCKER_USERNAME/node1.4:latest
+        docker push josephifekwe97/node1.4:latest
 
        
     - name: Debug Information
