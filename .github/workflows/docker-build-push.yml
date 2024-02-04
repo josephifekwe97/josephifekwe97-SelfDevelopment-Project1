@@ -17,13 +17,29 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        IMAGE_PREFIX:  ${{ secrets.IMAGE_PREFIX }}
         
       run: |
         cd Node
-        docker build -t josephifekwe97/node1.4:latest .
+        docker build -t $IMAGE_PREFIX/node1.4:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        docker push josephifekwe97/node1.4:latest
+        docker push  $IMAGE_PREFIX/node1.4:latest
+        
+        cd java
+        docker build -t $IMAGE_PREFIX/java-app:latest .
+        docker push $IMAGE_PREFIX/java-app:latest
 
+        cd  /Django/mydjangoapp
+        docker build -t $IMAGE_PREFIX/django-app:latest .
+        docker push $IMAGE_PREFIX/django-app:latest
+
+        cd /Flask/myflaskapp
+        docker build -t $IMAGE_PREFIX/flask-app:latest .
+        docker push $IMAGE_PREFIX/flask-app:latest
+
+        cd ../react/myreactapp
+        docker build -t $IMAGE_PREFIX/react-app:latest .
+        docker push  $IMAGE_PREFIX/react-app:latest
        
     - name: Debug Information
       run: |
