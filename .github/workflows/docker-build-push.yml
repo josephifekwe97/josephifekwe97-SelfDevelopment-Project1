@@ -21,6 +21,9 @@ jobs:
         cd Node
         docker build -t yourdockerhubusername/node1.0:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+        echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+        echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
         docker push yourdockerhubusername/node1.0:latest
 
         cd ../java
