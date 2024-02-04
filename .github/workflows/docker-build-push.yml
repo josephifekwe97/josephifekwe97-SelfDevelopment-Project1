@@ -19,12 +19,9 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
         cd Node
-        docker build -t yourdockerhubusername/node1.0:latest .
+        docker build -t josephifekwe97/node1.0:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-
-        echo "DOCKER_USERNAME: $DOCKER_USERNAME"
-        echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
-        docker push yourdockerhubusername/node1.0:latest
+        docker push josephifekwe97/node1.0:latest
 
         cd ../java
         docker build -t yourdockerhubusername/java-app:latest .
