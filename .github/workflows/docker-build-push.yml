@@ -17,27 +17,14 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        
       run: |
         cd Node
-        docker build -t josephifekwe97/node1.0:latest .
+        docker build -t DOCKER_USERNAME/node1.4:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        docker push josephifekwe97/node1.0:latest
+        docker push DOCKER_USERNAME/node1.4:latest
 
-        cd ../java
-        docker build -t yourdockerhubusername/java-app:latest .
-        docker push yourdockerhubusername/java-app:latest
-
-        cd ../Django/mydjangoapp
-        docker build -t yourdockerhubusername/django-app:latest .
-        docker push yourdockerhubusername/django-app:latest
-
-        cd ../Flask/myflaskapp
-        docker build -t yourdockerhubusername/flask-app:latest .
-        docker push yourdockerhubusername/flask-app:latest
-
-        cd ../react/myreactapp
-        docker build -t yourdockerhubusername/react-app:latest .
-        docker push yourdockerhubusername/react-app:latest
+       
     - name: Debug Information
       run: |
         echo "DOCKER_USERNAME: $DOCKER_USERNAME"
