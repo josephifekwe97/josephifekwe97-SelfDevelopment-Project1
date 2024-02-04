@@ -29,16 +29,16 @@ jobs:
         cd Java
         docker build -t josephifekwe97/java-app:latest .
         docker push josephifekwe97/java-app:latest
-
-        cd  /Django/mydjangoapp
+        cd ..
+        cd Django/mydjangoapp
         docker build -t josephifekwe97/django-app:latest .
         docker push josephifekwe97/django-app:latest
-
-        cd /Flask/myflaskapp
+        cd ..
+        cd Flask/myflaskapp
         docker build -t josephifekwe97/flask-app:latest .
         docker push josephifekwe97/flask-app:latest
-
-        cd ../react/myreactapp
+        cd ..
+        cd react/myreactapp
         docker build -t josephifekwe97/react-app:latest .
         docker push  josephifekwe97/react-app:latest
        
